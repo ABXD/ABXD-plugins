@@ -2,7 +2,7 @@
 
 function ircReport($stuff)
 {
-	file_get_contents(Settings::pluginGet("url")."?payload". urlencode($stuff),);
+	file_get_contents(Settings::pluginGet("url")."?=payload".urlencode($stuff),);
 }
 
 function ircUserColor($name, $gender, $power) {
