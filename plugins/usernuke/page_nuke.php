@@ -44,7 +44,11 @@ if(isset($_POST["currpassword"]))
 		//Delete usercomments by user or to user
 		query("delete from {usercomments}
 				where uid={0} or cid={0}", $uid);
-
+				
+		//Delete private messages sent to the user or sent by the user
+		query("delete from {pmsgs}
+				where userfrom={0}", $uid);
+		
 		//Delete THE USER ITSELF
 		query("delete from {users}
 				where id={0}", $uid);
