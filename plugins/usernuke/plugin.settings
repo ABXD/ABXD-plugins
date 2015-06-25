@@ -1,2 +1,2 @@
 name=User Nuke
-description=Adds a button to nuke a user (Removes all threads, posts, usercomments, bans and IP-bans)
+description=Adds a button to delete a user (Removes all threads, posts, usercomments, private messages, and then IP-bans the user)
