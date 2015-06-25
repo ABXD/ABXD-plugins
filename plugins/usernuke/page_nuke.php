@@ -81,7 +81,7 @@ echo "
 			<td class=\"cell2\">
 			</td>
 			<td class=\"cell0\">
-				".__("WARNING: This will IP-ban the user, and permanently and irreversibly delete the user itself and all his posts, threads, and profile comments. This user will be gone forever, as if he never existed.")."
+				".__("WARNING: This will IP-ban the user, and permanently and irreversibly delete the user itself and all his posts, threads, profile comments, and private messages. This user will be gone forever, as if he never existed.")."
 				<br/><br/>
 				".__("Please enter your password to confirm.")."
 			</td>
