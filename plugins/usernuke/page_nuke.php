@@ -44,7 +44,11 @@ if(isset($_POST["currpassword"]))
 		//Delete usercomments by user or to user
 		query("delete from {usercomments}
 				where uid={0} or cid={0}", $uid);
-
+				
+		//Delete private messages sent to the user or sent by the user
+		query("delete from {pmsgs}
+				where userfrom={0}", $uid);
+		
 		//Delete THE USER ITSELF
 		query("delete from {users}
 				where id={0}", $uid);
@@ -77,7 +81,7 @@ echo "
 			<td class=\"cell2\">
 			</td>
 			<td class=\"cell0\">
-				".__("WARNING: This will IP-ban the user, and permanently and irreversibly delete the user itself and all his posts, threads, and profile comments. This user will be gone forever, as if he never existed.")."
+				".__("WARNING: This will IP-ban the user, and permanently and irreversibly delete the user itself and all his posts, threads, profile comments, and private messages. This user will be gone forever, as if he never existed.")."
 				<br/><br/>
 				".__("Please enter your password to confirm.")."
 			</td>
