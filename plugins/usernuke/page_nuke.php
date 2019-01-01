@@ -1,12 +1,20 @@
 <?php
-
-if($loguser["powerlevel"] < 3)
-	kill("You must be an admin");
+//If you want admins to be able to nuke, change 4 to 3.
+if($loguser["powerlevel"] < 4)
+	kill("You must be root to run this command.");
 
 $uid = (int)$_GET["id"];
 
 $user = fetch(query("select * from {users} where id={0}", $uid));
 
+//If you want other people to be able to nuke, remove/comment lines 11-13. Default is that user 1 can only nuke.
+if ($loguserid != 1) { 
+	require('pages/404.php'); return; 
+}
+//Prevent anyone from nuking the owner, which is usually userid 1.
+if($uid == 1)
+	kill("No.");
+	
 if(!$user)
 	kill("User not found");
 
